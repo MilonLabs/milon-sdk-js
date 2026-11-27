@@ -1,0 +1,115 @@
+{
+  "name": "@milon/jssdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK structure for Milon MIP-compatible clients.",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "IDL",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./crypto": {
+      "types": "./dist/crypto/index.d.ts",
+      "import": "./dist/crypto/index.js",
+      "default": "./dist/crypto/index.js"
+    },
+    "./resource": {
+      "types": "./dist/resource/index.d.ts",
+      "import": "./dist/resource/index.js",
+      "default": "./dist/resource/index.js"
+    },
+    "./transaction": {
+      "types": "./dist/transaction/index.d.ts",
+      "import": "./dist/transaction/index.js",
+      "default": "./dist/transaction/index.js"
+    },
+    "./transaction-json": {
+      "types": "./dist/transaction-json/index.d.ts",
+      "import": "./dist/transaction-json/index.js",
+      "default": "./dist/transaction-json/index.js"
+    },
+    "./app": {
+      "types": "./dist/app/index.d.ts",
+      "import": "./dist/app/index.js",
+      "default": "./dist/app/index.js"
+    },
+    "./executor": {
+      "types": "./dist/executor/index.d.ts",
+      "import": "./dist/executor/index.js",
+      "default": "./dist/executor/index.js"
+    },
+    "./chain": {
+      "types": "./dist/chain/index.d.ts",
+      "import": "./dist/chain/index.js",
+      "default": "./dist/chain/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "import": "./dist/utils/index.js",
+      "default": "./dist/utils/index.js"
+    },
+    "./idl": {
+      "types": "./dist/idl/index.d.ts",
+      "import": "./dist/idl/index.js",
+      "default": "./dist/idl/index.js"
+    },
+    "./bcs": {
+      "types": "./dist/bcs/index.d.ts",
+      "import": "./dist/bcs/index.js",
+      "default": "./dist/bcs/index.js"
+    },
+    "./postcard": {
+      "types": "./dist/postcard/index.d.ts",
+      "import": "./dist/postcard/index.js",
+      "default": "./dist/postcard/index.js"
+    },
+    "./serde": {
+      "types": "./dist/serde/index.d.ts",
+      "import": "./dist/serde/index.js",
+      "default": "./dist/serde/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/fix-esm-extensions.cjs",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "generate:idls": "node scripts/generate-default-idls.cjs",
+    "sync:idls": "node scripts/sync-idls.cjs",
+    "prepack": "npm run build",
+    "test": "npm run build && node --experimental-specifier-resolution=node --test \"test/**/*.test.mjs\"",
+    "test:devnet": "MILON_RUN_DEVNET=1 npm test"
+  },
+  "keywords": [
+    "milon",
+    "sdk",
+    "blockchain"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "blake3-wasm": "2.1.5",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "@dicebear/core": "^10.7.0",
+    "@dicebear/styles": "^10.6.0",
+    "@noble/curves": "^1.8.0",
+    "@noble/hashes": "^2.2.0",
+    "bs58": "^6.0.0"
+  }
+}
