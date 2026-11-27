@@ -1,5 +1,5 @@
 {
-  "name": "@milon/jssdk",
+  "name": "@milonlabs/jssdk",
   "version": "0.1.0",
   "description": "TypeScript SDK structure for Milon MIP-compatible clients.",
   "engines": {
