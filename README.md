@@ -1,13 +1,13 @@
 # Milon TypeScript SDK
 
-`@milonlabs/jssdk` is Milon's TypeScript/JavaScript SDK for creating and signing transactions, working with application IDLs, and calling the Milon invoke API.
+`@milonlabs/milon-sdk` is Milon's TypeScript/JavaScript SDK for creating and signing transactions, working with application IDLs, and calling the Milon invoke API.
 
 ## Installation
 
 ```bash
-npm install @milonlabs/jssdk
+npm install @milonlabs/milon-sdk
 # or
-pnpm add @milonlabs/jssdk
+pnpm add @milonlabs/milon-sdk
 ```
 
 Requirements: Node.js 20.19+, ESM, and TypeScript 5.4+ for TypeScript projects.
@@ -24,7 +24,7 @@ import {
   SecretKey,
   Transaction,
   bytesToHex,
-} from "@milonlabs/jssdk";
+} from "@milonlabs/milon-sdk";
 
 const secretKey = SecretKey.generateClassical();
 const publicKey = await secretKey.ed25519Public();
@@ -71,7 +71,7 @@ Use `setNetwork(Network.DEVNET)` for lower-level APIs that share global chain st
 Common types are exported from the package root:
 
 ```ts
-import { Address, IdlName, IdlProvider, Transaction } from "@milonlabs/jssdk";
+import { Address, IdlName, IdlProvider, Transaction } from "@milonlabs/milon-sdk";
 ```
 
 Module entry points are also available: `crypto`, `resource`, `transaction`, `transaction-json`, `app`, `executor`, `chain`, `utils`, `idl`, `bcs`, `postcard`, and `serde`.
@@ -140,7 +140,7 @@ Use `viewJsonToPostcard()` only for IDL View methods. For a low-level view reque
 ### Entry JSON example
 
 ```ts
-import { Network, submitTransactionJson } from "@milonlabs/jssdk";
+import { Network, submitTransactionJson } from "@milonlabs/milon-sdk";
 
 const result = await submitTransactionJson(Network.DEVNET, {
   app: "Token",
@@ -165,7 +165,7 @@ The codec does not read private keys or sign automatically. Validate and display
 ### View JSON example
 
 ```ts
-import { executeViewJson, Network } from "@milonlabs/jssdk";
+import { executeViewJson, Network } from "@milonlabs/milon-sdk";
 
 const response = await executeViewJson(Network.DEVNET, {
   app: "Token",
@@ -228,7 +228,7 @@ Useful high-level methods include `getBlockHead`, `getTxByHash`, `getAccount`, `
 ### RPC example and timeouts
 
 ```ts
-import { ClientHandler, Network, RpcMethodEnum } from "@milonlabs/jssdk";
+import { ClientHandler, Network, RpcMethodEnum } from "@milonlabs/milon-sdk";
 
 const client = new ClientHandler(Network.DEVNET, { timeoutMs: 10_000 });
 const response = await client.request({ method: RpcMethodEnum.chain_head, body: [] });

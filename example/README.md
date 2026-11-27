@@ -25,8 +25,8 @@ Network examples do not make requests by default. Enable access explicitly to us
 MILON_RUN_NETWORK_EXAMPLES=1 node example/07-rpc-and-view.mjs
 ```
 
-When integrating from another project, replace `../dist/index.js` with `@milonlabs/jssdk`; you can also use
-`@milonlabs/jssdk/crypto`, `/transaction`, `/transaction-json`, `/idl`, `/executor`, `/bcs`, and `/postcard` subpaths.
+When integrating from another project, replace `../dist/index.js` with `@milonlabs/milon-sdk`; you can also use
+`@milonlabs/milon-sdk/crypto`, `/transaction`, `/transaction-json`, `/idl`, `/executor`, `/bcs`, and `/postcard` subpaths.
 
 Example overview:
 

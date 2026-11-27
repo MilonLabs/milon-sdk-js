@@ -1,6 +1,6 @@
 {
-  "name": "@milonlabs/jssdk",
-  "version": "0.1.0",
+  "name": "@milonlabs/milon-sdk",
+  "version": "0.1.1",
   "description": "TypeScript SDK structure for Milon MIP-compatible clients.",
   "engines": {
     "node": ">=20.19.0"
